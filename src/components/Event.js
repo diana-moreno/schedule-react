@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Todo extends Component {
+class Event extends Component {
   state = {
 
   }
@@ -14,7 +14,7 @@ class Todo extends Component {
           <form>
 
             <div className='form-group row'>
-              <label className='col-sm-4 col-lg-2 col-form-label'> Event title
+              <label className='col-sm-4 col-lg-2 col-form-label'> Title
               </label>
               <div className='col-sm-8 col-lg-10'>
                 <input
@@ -61,6 +61,27 @@ class Todo extends Component {
               </div>
             </div>
 
+            <div className='form-group row'>
+              <label className='col-sm-4 col-lg-2 col-form-label'>Notes
+              </label>
+              <div className='col-sm-8 col-lg-10'>
+                <input
+                  type='text'
+                  className='form-control'
+                  placeholder='Notes and tasks'
+                  name='notes'
+                />
+              </div>
+            </div>
+
+            <div className='row'>
+              <input
+                type='submit'
+                className='py-3 mt-5 col-sm-4 col-lg-4 btn btn-success mx-auto'
+                value='Add event'
+              />
+            </div>
+
           </form>
         </div>
       </div>
@@ -68,4 +89,4 @@ class Todo extends Component {
   }
 }
 
-export default Todo;
+export default Event;
