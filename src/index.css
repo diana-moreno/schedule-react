@@ -2,24 +2,23 @@ html {
   min-height: 100%;
 }
 body {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
   background-color: #607D8B!important;
   min-height: 100%;
   padding-bottom: 5rem;
 }
-
 h2, p, label {
   color: #797777;
 }
-
+h1 {
+  color: white;
+}
 header {
   margin-top: 3rem;
 }
-header h1 {
-  color: white;
-}
+
+
+
 .lista-citas .media {
   border-bottom: 1px solid #e1e1e1;
   padding-bottom: 3rem;
@@ -37,6 +36,6 @@ header h1 {
 .lista-citas .media-body span {
   font-weight: bold;
 }
-.col-form-label {
-  font-size: 12px;
-}
+/*.col-form-label {
+  font-size: 14px;
+}*/

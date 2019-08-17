@@ -65,12 +65,12 @@ class Event extends Component {
               <label className='col-sm-4 col-lg-2 col-form-label'>Notes
               </label>
               <div className='col-sm-8 col-lg-10'>
-                <input
+                <textarea
                   type='text'
                   className='form-control'
-                  placeholder='Notes and tasks'
+                  placeholder='Notes'
                   name='notes'
-                />
+                ></textarea>
               </div>
             </div>
 
