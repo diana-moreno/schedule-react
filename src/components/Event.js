@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 class Event extends Component {
   state = {
-
+    title: '',
+    location: '',
+    date: '',
+    time: '',
+    notes: '',
   }
   render() {
     return (
