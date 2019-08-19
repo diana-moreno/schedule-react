@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
+
 
 class Event extends Component {
   // constructor(props) {
@@ -50,8 +52,12 @@ class Event extends Component {
       return // no se siga ejecutando el código si hay error
     }
 
+    // generar objeto con los datos
+    const newEvent = {...this.state.event};
+    newEvent.id = uuid();
+
     // agregar el evento al state de App. Tiene que comunicarse con App a través de props.
-    this.props.createNewEvent(this.state.event)
+    this.props.createNewEvent(newEvent)// this.state.event)
 
   }
 

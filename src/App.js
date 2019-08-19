@@ -5,12 +5,20 @@ import Event from './components/Event';
 
 class App extends Component {
   state = {
-
+    events: []
   }
 
   // esta función se crea para pasar datos del hijo al padre, ya que normalmente los datos se pasan del padre al hijo
-  createNewEvent = elem => {
-    console.log(elem)
+  createNewEvent = elems => {
+    //console.log(elems)
+
+    //en el state no se puede hacer push, así que se hace una copia del objeto, se modifica y después se sustituye el state por el nuevo state
+    const events = [...this.state.events, elems];  // lo que ya hubiera en el array .concat(elems)
+
+    // cambiar el estado sustituyendo el valor del state por el nuevo
+    this.setState({
+      events //como se llaman igual, le pasamos solo uno
+    })
   }
 
   render() {
