@@ -62,12 +62,19 @@ class Event extends Component {
   }
 
   render() {
+
+      //extraer valor del state
+      const { error } = this.state;
+
     return (
       <div className='card mt-5 py-5'> {/*create a card with margin an padding responsible from bootstrap*/}
         <div className='card-body'>
           <h2 className='card-title text-center mb-5'>
             Add a new event
           </h2>
+
+          { error ? <div className='alert alert-danger text-center'>All fields are required.</div> : null }
+
           <form onSubmit={this.handleSubmit}>
 
             <div className='form-group row'>

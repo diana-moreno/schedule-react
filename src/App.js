@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './bootstrap.min.css';
+import './bootstrap.min.css'; // https://bootswatch.com/
 import Header from './components/Header';
 import Event from './components/Event';
 
