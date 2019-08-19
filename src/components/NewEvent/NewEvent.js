@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
+import './NewEvent.css'
 
+const initialState = { // se declara fuera para poder resetearlo
+  event: {
+    title: '',
+    location: '',
+    date: '',
+    time: '',
+    notes: '',
+  },
+  error: false
+}
 
 class Event extends Component {
   // constructor(props) {
@@ -16,16 +27,7 @@ class Event extends Component {
   //   }
   //   this.handleChange = this.handleChange.bind(this);
   // }
-  state = {
-    event: {
-      title: '',
-      location: '',
-      date: '',
-      time: '',
-      notes: '',
-    },
-    error: false
-  }
+  state = {...initialState}
 
   // Cuando el usuario escribe en los inputs, el state toma el valor del value
   handleChange = e => { //con arrow function no se pierde el this y no hace falta bindear. (con esta forma sí hace falta: handleChange(e) {})
@@ -59,6 +61,10 @@ class Event extends Component {
     // agregar el evento al state de App. Tiene que comunicarse con App a través de props.
     this.props.createNewEvent(newEvent)// this.state.event)
 
+    //colocar en el state el state inicial. Resetea el estado cuando no sale un error.
+    this.setState({
+      ...initialState
+    })
   }
 
   render() {
@@ -78,7 +84,7 @@ class Event extends Component {
           <form onSubmit={this.handleSubmit}>
 
             <div className='form-group row'>
-              <label className='col-sm-4 col-lg-2 col-form-label'> Title
+              <label className='col-sm-4 col-lg-2 col-form-label text-nowrap'> Title
               </label>
               <div className='col-sm-8 col-lg-10'>
                 <input
@@ -93,7 +99,7 @@ class Event extends Component {
             </div>
 
             <div className='form-group row'>
-              <label className='col-sm-4 col-lg-2 col-form-label'> Location
+              <label className='col-sm-4 col-lg-2 col-form-label text-nowrap'> Location
               </label>
               <div className='col-sm-8 col-lg-10'>
                 <input
@@ -108,7 +114,7 @@ class Event extends Component {
             </div>
 
             <div className='form-group row'>
-              <label className='col-sm-4 col-lg-2 col-form-label'> Date
+              <label className='col-sm-4 col-lg-2 col-form-label text-nowrap'> Date
               </label>
               <div className='col-sm-8 col-lg-4'>
                 <input
@@ -120,7 +126,7 @@ class Event extends Component {
                 />
               </div>
 
-              <label className='col-sm-4 col-lg-2 col-form-label'> Time
+              <label className='col-sm-4 col-lg-2 col-form-label text-nowrap'> Time
               </label>
               <div className='col-sm-8 col-lg-4'>
                 <input
@@ -134,7 +140,7 @@ class Event extends Component {
             </div>
 
             <div className='form-group row'>
-              <label className='col-sm-4 col-lg-2 col-form-label'>Notes
+              <label className='col-sm-4 col-lg-2 col-form-label text-nowrap'>Notes
               </label>
               <div className='col-sm-8 col-lg-10'>
                 <textarea

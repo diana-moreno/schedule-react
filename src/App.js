@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import './bootstrap.min.css'; // https://bootswatch.com/
-import Header from './components/Header';
-import Event from './components/Event';
+// import './bootstrap.min.css'; // https://bootswatch.com/
+// import './index.css';
+import Header from './components/Header/Header';
+import NewEvent from './components/NewEvent/NewEvent';
+import EventsList from './components/EventsList/EventsList'
 
 class App extends Component {
   state = {
@@ -21,18 +23,34 @@ class App extends Component {
     })
   }
 
+  //delete events
+  deleteEvents = id => (
+    console.log(id)
+  );
+
+
   render() {
     return (
-      <div className='container'>
+      <div className='container-fluid'>
         <Header
-          title='My personal schedule'
+          title='My Personal Schedule'
         />
-        <div className='row'>
-          <div className='col-md-10 mx-auto'>
-            <Event
+        <div className='d-flex flex-wrap'>
+
+          <div className='col-md-4 mx-auto'>
+            <NewEvent
               createNewEvent={this.createNewEvent}
             />
+
           </div>
+
+          <div className='mt-5 col-md-6 mx-auto'>
+            <EventsList
+              events={this.state.events}
+              deleteEvents={this.deleteEvents}
+            />
+          </div>
+
         </div>
       </div>
     );
