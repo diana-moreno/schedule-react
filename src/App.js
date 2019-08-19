@@ -24,9 +24,19 @@ class App extends Component {
   }
 
   //delete events
-  deleteEvents = id => (
-    console.log(id)
-  );
+  deleteEvent = id => {
+    //console.log(id)
+    //crear una copia del state
+    const actualEvents = [...this.state.events];
+
+    //utilizar filter para extraer el elemento id del array que coincida en id
+    const events = actualEvents.filter(event => event.id !== id)
+
+    //actualizar el state
+    this.setState({
+      events
+    })
+  };
 
 
   render() {
@@ -47,7 +57,7 @@ class App extends Component {
           <div className='mt-5 col-md-6 mx-auto'>
             <EventsList
               events={this.state.events}
-              deleteEvents={this.deleteEvents}
+              deleteEvent={this.deleteEvent}
             />
           </div>
 

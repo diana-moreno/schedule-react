@@ -15,7 +15,7 @@ const Event = ({event, deleteEvent}) => (
       <div className='w-25 text-right mr-5'>
         <button
           className='btn btn-danger'
-          onClick={deleteEvent}
+          onClick={() => deleteEvent(event.id)}// se necesita pasar el valor del id, para ello hay que bindear el id a través del constructor o arrow function
         >Delete event</button>
       </div>
     </div>
