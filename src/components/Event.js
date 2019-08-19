@@ -21,7 +21,8 @@ class Event extends Component {
       date: '',
       time: '',
       notes: '',
-    }
+    },
+    error: false
   }
 
   // Cuando el usuario escribe en los inputs, el state toma el valor del value
@@ -38,6 +39,19 @@ class Event extends Component {
   //cuando el usuario envía el formulario
   handleSubmit = e => {
     e.preventDefault(); //evita que un texto invalido se valide
+    // extraer los valores del state
+    const { title, location, date, time, notes } = this.state.event;
+
+    // validar que todos los campos se hayan rellenado
+    if(title === '' | location === '' | date === '' | time === '' | notes === '') {
+      this.setState({
+        error: true
+      })
+      return // no se siga ejecutando el código si hay error
+    }
+
+    // agregar el evento al state de App. Tiene que comunicarse con App a través de props.
+    this.props.createNewEvent(this.state.event)
 
   }
 
@@ -48,7 +62,7 @@ class Event extends Component {
           <h2 className='card-title text-center mb-5'>
             Add a new event
           </h2>
-          <form>
+          <form onSubmit={this.handleSubmit}>
 
             <div className='form-group row'>
               <label className='col-sm-4 col-lg-2 col-form-label'> Title
