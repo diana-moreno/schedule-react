@@ -1,9 +1,0 @@
-body {
-  /*background-color: #78acbe;*/
-  /*background-image: linear-gradient(to bottom right, #78acbe, #3c4a51);*/
-  /*background-image: linear-gradient(-225deg, #78acbe 0%, #3c4a51 52%, #3c4a51 100%);*/
-  background-image: linear-gradient(-225deg, #78acbe 0%, #18BC9C 45%, #3c4a51 100%)
-}
-.card {
-  background-color: #fefcfb;
-}
