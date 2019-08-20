@@ -15,7 +15,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "homepage": "https://diana-moreno.github.io/schedule-react"
+    "homepage": "."//"http://diana-moreno.github.io/schedule-react"
   },
   "eslintConfig": {
     "extends": "react-app"
