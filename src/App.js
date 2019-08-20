@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 // import './index.css';
 import Header from './components/Header/Header';
 import NewEvent from './components/NewEvent/NewEvent';
-import EventsList from './components/EventsList/EventsList'
+import EventsList from './components/EventsList/EventsList';
+
 
 class App extends Component {
   state = {

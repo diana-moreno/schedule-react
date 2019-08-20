@@ -1,5 +1,7 @@
 import React from 'react';
 import Event from '../Event/Event';
+import PropTypes from 'prop-types';
+
 
 const EventsList = ({events, deleteEvent}) => (
   <div className='card py-5'>
@@ -17,5 +19,10 @@ const EventsList = ({events, deleteEvent}) => (
     </div>
   </div>
 )
+
+EventsList.propTypes = {
+  events : PropTypes.array.isRequired,
+  deleteEvent : PropTypes.func.isRequired
+}
 
 export default EventsList

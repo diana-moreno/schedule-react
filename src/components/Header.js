@@ -7,9 +7,8 @@ const Header = ({title}) => (
   </header>
 )
 
-//documentar la aplicación para saber el tipo de dato que se espera y si es obligatorio o no.
 Header.propTypes = {
-  title : PropTypes.string.isRequired
+  title: PropTypes.array.isRequired
 }
 
 export default Header;
