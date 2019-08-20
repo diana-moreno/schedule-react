@@ -9,7 +9,19 @@ class App extends Component {
   state = {
     events: []
   }
-
+  // cargar los datos almacenados al cargar la página
+  componentDidMount() {
+    const eventsLS = localStorage.getItem('events')
+    if(eventsLS) {
+      this.setState({
+        events: JSON.parse(eventsLS) // lo convierte en un array de objetos
+      })
+    }
+  }
+  // almacenar los datos cuando se añaden o eliminan eventos
+  componentDidUpdate() {
+    localStorage.setItem('events', JSON.stringify(this.state.events));
+  }
   // esta función se crea para pasar datos del hijo al padre, ya que normalmente los datos se pasan del padre al hijo
   createNewEvent = elems => {
     //console.log(elems)
