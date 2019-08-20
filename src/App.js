@@ -53,6 +53,9 @@ class App extends Component {
 
 
   render() {
+
+    const minWidthStyle = {minWidth: '615px'}
+
     return (
       <div className='container-fluid'>
         <Header
@@ -60,14 +63,14 @@ class App extends Component {
         />
         <div className='d-flex flex-wrap'>
 
-          <div className='col-md-4 mx-auto'>
+          <div className='col-md-4 mx-auto' style={minWidthStyle}>
             <NewEvent
               createNewEvent={this.createNewEvent}
             />
 
           </div>
 
-          <div className='mt-5 col-md-6 mx-auto'>
+          <div className='mt-5 col-md-6 mx-auto' style={minWidthStyle}>
             <EventsList
               events={this.state.events}
               deleteEvent={this.deleteEvent}
