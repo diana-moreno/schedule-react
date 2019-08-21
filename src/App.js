@@ -28,11 +28,13 @@ class App extends Component {
     //console.log(elems)
 
     //en el state no se puede hacer push, así que se hace una copia del objeto, se modifica y después se sustituye el state por el nuevo state
-    const events = [...this.state.events, elems];  // lo que ya hubiera en el array .concat(elems)
+    const events = [...this.state.events, elems]// lo que ya hubiera en el array .concat(elems)
+      .sort((a, b) => a.time.localeCompare(b.time))
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
 
     // cambiar el estado sustituyendo el valor del state por el nuevo
     this.setState({
-      events //como se llaman igual, le pasamos solo uno
+      events: events //como se llaman igual, le pasamos solo uno
     })
   }
 
