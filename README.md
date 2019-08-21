@@ -29,7 +29,7 @@ This schedule manager is my first project made with Bootstrap classes and React.
 
 ### **Resources**
 
-- I have used [UUID](https://www.npmjs.com/package/uuid), a package from NPM.
+- To generate unique identifies I have used [UUID](https://www.npmjs.com/package/uuid), a package from NPM.
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), from Facebook.
 
 
